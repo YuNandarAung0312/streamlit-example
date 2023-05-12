@@ -16,6 +16,10 @@ In the meantime, below is an example of what you can do with just a few lines of
 """
 file = st.file_uploader("Pick a file")
 
+color = st.color_picker("Pick a color")
+
+st.altair_chart(my_chart)
+
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
