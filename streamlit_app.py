@@ -18,7 +18,7 @@ file = st.file_uploader("Pick a file")
 
 color = st.color_picker("Pick a color")
 
-st.altair_chart(1,1000)
+date = st.date_input("Pick a date")
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
