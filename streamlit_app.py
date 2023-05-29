@@ -4,42 +4,51 @@ import math
 import pandas as pd
 import streamlit as st
 
-"""
-# Welcome to Streamlit!
+import numpy as np
+import seaborn as sns
+from sklearn.ensemble import IsolationForest
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+# """
+# # Welcome to Streamlit!
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+# Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
-In the meantime, below is an example of what you can do with just a few lines of code:
-"""
-file = st.file_uploader("Pick a file")
+# If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
+# forums](https://discuss.streamlit.io).
 
-color = st.color_picker("Pick a color")
+# In the meantime, below is an example of what you can do with just a few lines of code:
+# """
+# file = st.file_uploader("Pick a file")
 
-date = st.date_input("Pick a date")
+# color = st.color_picker("Pick a color")
 
-with st.echo(code_location='below'):
-    total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
-    num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
+# date = st.date_input("Pick a date")
 
-    Point = namedtuple('Point', 'x y')
-    data = []
+# with st.echo(code_location='below'):
+#     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
+#     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
 
-    points_per_turn = total_points / num_turns
+#     Point = namedtuple('Point', 'x y')
+#     data = []
 
-    for curr_point_num in range(total_points):
-        curr_turn, i = divmod(curr_point_num, points_per_turn)
-        angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
-        radius = curr_point_num / total_points
-        x = radius * math.cos(angle)
-        y = radius * math.sin(angle)
-        data.append(Point(x, y))
+#     points_per_turn = total_points / num_turns
 
-    st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
-        .mark_circle(color='#0068c9', opacity=0.5)
-        .encode(x='x:Q', y='y:Q'))
+#     for curr_point_num in range(total_points):
+#         curr_turn, i = divmod(curr_point_num, points_per_turn)
+#         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
+#         radius = curr_point_num / total_points
+#         x = radius * math.cos(angle)
+#         y = radius * math.sin(angle)
+#         data.append(Point(x, y))
+
+#     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
+#         .mark_circle(color='#0068c9', opacity=0.5)
+#         .encode(x='x:Q', y='y:Q'))
 
     
-    st.write("This is Testing");
+#     st.write("This is Testing");
+
+data = pd.read_csv('student_marks.csv')
+data.head(10);
+
+
