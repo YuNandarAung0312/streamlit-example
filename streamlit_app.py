@@ -48,7 +48,7 @@ from sklearn.ensemble import IsolationForest
     
 #     st.write("This is Testing");
 
-data = pd.read_csv('student_marks.csv')
+data = st.read_csv('student_marks.csv')
 data.head(10);
 
 
